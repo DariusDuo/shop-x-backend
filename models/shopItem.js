@@ -15,7 +15,7 @@ const shopItemSchema = new Schema(
       type: Number,
       required: true,
     },
-    calePrice: {
+    salePrice: {
       type: Number,
     },
     image: {
@@ -39,7 +39,7 @@ const shopItemSchema = new Schema(
       required: true,
     },
     quantity: {
-      type: [Number],
+      type: Number,
       required: true,
     },
     category: {
@@ -53,6 +53,6 @@ const shopItemSchema = new Schema(
 
 // exportuoti naujai sukurta objekta pagal sia schema
 //                           turetu buti vienaskai musu kolecijos pav.
-const ShopItem = mongoose.model('ShopItem', ShopItemSchema);
+const ShopItem = mongoose.model('shopItem', shopItemSchema);
 
 module.exports = ShopItem;
