@@ -26,8 +26,8 @@ const shopItemSchema = new Schema(
       type: String,
       required: true,
     },
-    size: {
-      type: String,
+    sizeQty: {
+      type: [{ size: String, quantity: Number }],
       required: true,
     },
     images: {
@@ -38,14 +38,10 @@ const shopItemSchema = new Schema(
       type: String,
       required: true,
     },
-    quantity: {
-      type: Number,
-      required: true,
-    },
     category: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,
-      ref: 'shopCategory',
+      ref: '60e5f1081373aa3612958d31',
     },
   },
   { timestamps: true } /// adds timestamps
