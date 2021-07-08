@@ -1,5 +1,4 @@
 const express = require('express');
-const { populate } = require('../models/shopItem');
 const ShopItem = require('../models/shopItem');
 const router = express.Router();
 
@@ -20,7 +19,7 @@ router.post('/api/shop/items/new', (req, res) => {
     ],
     images: [1, 2, 3, 4],
     sku: 'autum_01',
-    category: '60e5f1741373aa3612958d38',
+    category: '60e593a6bf4b829b3784a7ad',
   };
   const newItem = new ShopItem(newItemData);
 
@@ -43,10 +42,10 @@ router.get('/api/shop/items', async (req, res) => {
 // gauti single item
 router.get('/api/shop/items/:id', async (req, res) => {
   try {
-    const item = await ShopItem.findById(req.params.id);
+    const item = await ShopItem.findById(req.params.id).populate('category');
     res.json(item);
   } catch (err) {
-    res.status(500).json('internal error');
+    res.status(500).json(err);
   }
 });
 
