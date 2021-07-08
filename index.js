@@ -21,6 +21,7 @@ mongoose
 app.use(morgan('dev'));
 // leidzia req body gauti kaip json
 app.use(express.json());
+app.use(cors());
 
 app.get('/', (req, res) => {
   res.status(200).json(`Serveris veikia an port ${PORT}`);
