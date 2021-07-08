@@ -41,7 +41,7 @@ const shopItemSchema = new Schema(
     category: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,
-      ref: '60e5f1081373aa3612958d31',
+      ref: 'shopCategory',
     },
   },
   { timestamps: true } /// adds timestamps
