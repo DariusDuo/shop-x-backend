@@ -6,7 +6,7 @@ const cors = require('cors');
 const ShopCategory = require('./models/shopCategory');
 
 const app = express();
-
+console.log(process.env.MONGO_CONNECT_STIRNG);
 const PORT = 4000;
 
 // prisijungimas prie duomenu bazes
